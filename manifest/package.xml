@@ -5,6 +5,9 @@
 		<members>CountryAPISchedule</members>
 		<members>CountryHelperClass</members>
 		<members>CountryTriggerHandler</members>
+        <members>CountryAPIQueueableTest</members>
+        <members>CountryHelperClassTest</members>
+         <members>CountryAPIScheduleTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
