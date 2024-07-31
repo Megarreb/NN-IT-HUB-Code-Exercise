@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Owner_Change_Without_Req_Fields</fullName>
+    <active>true</active>
+    <description>Prevent changing the lead owner unless Country, Lead Source, and No. of Employees are filled in. System Administrator and Contract Manager profiles have specific exemptions.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(OwnerId),
+    OR(
+        AND(      
+            OR(
+               ISBLANK(Country),
+               ISPICKVAL(LeadSource, &quot;&quot;),
+               ISBLANK(NumberOfEmployees)
+             ),
+             AND(
+               NOT($Profile.Name = &apos;System Administrator&apos;),
+               NOT($Profile.Name = &apos;Contract Manager&apos;)
+             )
+        ),
+        AND(
+            $Profile.Name = &apos;Contract Manager&apos;,
+            OR(
+              ISBLANK(Country),
+              ISPICKVAL(LeadSource, &quot;&quot;)
+            ) 
+        ),
+        AND(
+            $Profile.Name = &apos;System Administrator&apos;,
+            ISPICKVAL(LeadSource, &quot;&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot change the lead owner unless Country, Lead Source, and No. of Employees are filled in. Contract Manager does not need to fill in No. of Employees. System Administrator does not need to fill in Country.</errorMessage>
+</ValidationRule>
