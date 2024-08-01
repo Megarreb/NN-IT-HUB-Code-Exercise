@@ -49,6 +49,10 @@
 		<name>Flow</name>
 	</types>
 	<types>
+		<members>countrylayer</members>
+		<name>RemoteSiteSetting</name>
+	</types>
+	<types>
 		<members>Lead.Prevent_Owner_Change_Without_Req_Fields</members>
 		<name>ValidationRule</name>
 	</types>
