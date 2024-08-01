@@ -29,6 +29,7 @@
 		<members>Lead.Region__c</members>
 		<members>Lead.Regional_Bloc_Acronym__c</members>
 		<members>Lead.Regional_Bloc_Name__c</members>
+        <members> API_Settings__mdt.API_Key__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
@@ -39,6 +40,7 @@
 		<members>Country__c</members>
 		<members>History__c</members>
 		<members>Lead</members>
+        <members>API_Settings__mdt</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
